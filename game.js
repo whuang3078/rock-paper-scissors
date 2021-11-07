@@ -20,19 +20,17 @@ function playRound(playerSelection, computerSelection) {
         || formattedPlayer === 'Scissors') {
             if (formattedPlayer === computerSelection) {
                 return 'Tie.';
-            } else if (formattedPlayer === 'Rock' && computerSelection === 'Paper') {
+            } else if (
+                (formattedPlayer === 'Rock' && computerSelection === 'Paper') ||
+                (formattedPlayer === 'Paper' && computerSelection === 'Scissors') ||
+                (formattedPlayer === 'Scissors' && computerSelection === 'Rock')) {
                 return 'You Lose.';
-            } else if (formattedPlayer === 'Rock' && computerSelection === 'Scissors') {
+            } else if (
+                (formattedPlayer === 'Rock' && computerSelection === 'Scissors') ||
+                (formattedPlayer === 'Scissors' && computerSelection === 'Paper') ||
+                (formattedPlayer === 'Paper' && computerSelection === 'Rock')) {
                 return 'You Win.';
-            } else if (formattedPlayer === 'Paper' && computerSelection === 'Rock') {
-                return 'You Win.';
-            } else if (formattedPlayer === 'Paper' && computerSelection === 'Scissors') {
-                return 'You Lose.';
-            } else if (formattedPlayer === 'Scissors' && computerSelection === 'Rock') {
-                return 'You Lose.';
-            } else if (formattedPlayer === 'Scissors' && computerSelection === 'Paper') {
-                return 'You Win.';
-            } 
+            }
         }
     }
 
