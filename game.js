@@ -63,22 +63,20 @@ function game() {
         playerSelection = window.prompt('Rock, paper, scissors... shoot!')
         result = playRound(playerSelection, computerPlay());
         
-        if (result.slice(0, 6) !== 'Please') {
+        if (result !== 'Please input "rock", "paper", or "scissors') {
             if (result === 'You Win.') {
                 playerScore++;
                 i++;
             } else if (result === 'You Lose.') {
                 computerScore++;
                 i++;
-            } else {
-                playerScore++;
-                computerScore++;
+            } else if (result === 'Tie.') {
                 i++;
             }
+        }
 
             console.log(result + ' Your score is ' + playerScore 
                         + ' and the computer\'s score is ' + computerScore);
-        }
     }
 
     if (playerScore === computerScore) {
@@ -89,5 +87,3 @@ function game() {
         console.log('You win overall!!!');
     }
 }
-
-// game();
